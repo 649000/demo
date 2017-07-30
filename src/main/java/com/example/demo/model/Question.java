@@ -8,13 +8,16 @@ import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
+import io.katharsis.resource.annotations.*;
 
 /**
  * Created by Nazri on 13/7/17.
  */
 @Entity
+@JsonApiResource(type = "questions")
 public class Question {
 
+    @JsonApiId
     @Id //Declare as Primary Key
     @GeneratedValue(strategy= GenerationType.AUTO) //Auto generate the IDvalue
     private int questionID;

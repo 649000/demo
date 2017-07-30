@@ -1,14 +1,19 @@
 package com.example.demo.model;
 
+import io.katharsis.resource.annotations.JsonApiId;
+import io.katharsis.resource.annotations.JsonApiResource;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 // This tells Hibernate to make a table out of this class
+@JsonApiResource(type = "users")
 @Entity
 public class User {
 
+    @JsonApiId
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
